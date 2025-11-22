@@ -3,11 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quarterly Earnings Report</title>
+  <title>Quarterly Earnings - Interactive</title>
 
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.5.0/dist/reveal.css">
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.5.0/dist/theme/black.css" id="theme">
-  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/monokai.min.css">
 </head>
 
@@ -16,88 +15,69 @@
     <div class="slides">
 
       <section>
-        <h1>Q4 Quarterly Earnings</h1>
-        <h3>Interactive Report</h3>
-        <p>Presented by: Technical Consultant</p>
-        <p style="color: #42affa; font-size: 0.9em;">23f3004196@ds.study.iitm.ac.in</p>
-        
-        <aside class="notes">
-          Welcome everyone. This is the Q4 earnings report presentation.
-        </aside>
+        <h1>Q4 Earnings Report</h1>
+        <h3>Interactive Presentation</h3>
+        <p>
+          Presented by: Technical Consultant<br>
+          <a href="mailto:23f3004196@ds.study.iitm.ac.in" style="color: #42affa;">23f3004196@ds.study.iitm.ac.in</a>
+        </p>
       </section>
 
       <section data-markdown>
         <textarea data-template>
-          ## Agenda
+          ## Agenda (Markdown)
           
-          * Financial Highlights
-          * Operational Efficiency
-          * Future Outlook
+          * **Review:** Financial Performance
+          * **Strategy:** Operational Efficiency
           * **Contact:** 23f3004196@ds.study.iitm.ac.in
           
           ---
-          > "Success is the sum of small efforts."
+          > "Data-driven decisions drive growth."
         </textarea>
-        <aside class="notes">
-          This slide is generated using Markdown. We will cover highlights and efficiency.
-        </aside>
       </section>
 
       <section>
-        <h2>Performance Highlights</h2>
+        <h2>Growth Drivers</h2>
+        <p>Press <strong>Right Arrow</strong> to reveal:</p>
         <ul>
-          <li class="fragment fade-up">Revenue up by 15% QoQ</li>
-          <li class="fragment fade-up">Client base grew to 2M+</li>
-          <li class="fragment fade-up">Server costs reduced by 10%</li>
+          <li class="fragment fade-in-then-semi-out">User acquisition up 20%</li>
+          <li class="fragment fade-in-then-semi-out">Churn rate reduced by 5%</li>
+          <li class="fragment fade-in-then-semi-out">New API monetization launched</li>
         </ul>
         <aside class="notes">
-          Click through to reveal: Revenue, Client Base, then Cost reduction.
+          Speaker Note: Emphasize the churn reduction as the key win for Q4.
         </aside>
       </section>
 
       <section>
-        <h2>Valuation Model</h2>
-        <p>We utilize the Net Present Value (NPV) formula:</p>
+        <h2>Financial Formula</h2>
+        <p>Net Present Value (NPV) Model:</p>
         
-        <div style="margin: 30px 0;">
+        <div style="margin: 20px auto; font-size: 1.5em;">
           \[ NPV = \sum_{t=1}^{T} \frac{C_t}{(1+r)^t} - C_0 \]
         </div>
 
-        <p style="font-size: 0.8em;">
-          Where \(C_t\) is cash flow, \(r\) is discount rate, and \(C_0\) is investment.
+        <p style="font-size: 0.7em;">
+          Where \(C_t\) = Net Cash Inflow, \(r\) = Discount Rate
         </p>
-
-        <aside class="notes">
-          Explain the NPV formula components clearly to the stakeholders.
-        </aside>
       </section>
 
       <section>
-        <h2>Automated Analysis</h2>
-        <p>Growth calculation using Python:</p>
+        <h2>Python Analysis</h2>
         <pre><code class="language-python" data-trim data-noescape>
-def calculate_cagr(start, end, periods):
-    """
-    Calculate Compound Annual Growth Rate
-    """
-    if start == 0: return 0
-    return (end / start) ** (1/periods) - 1
+import numpy as np
 
-# Execute Calculation
-print(f"CAGR: {calculate_cagr(100, 150, 3):.2%}")
+def calculate_margin(revenue, cost):
+    """
+    Calculate Operating Margin
+    """
+    if revenue == 0:
+        return 0.0
+    return (revenue - cost) / revenue
+
+# Q4 Data
+print(f"Margin: {calculate_margin(1000, 400):.2%}")
         </code></pre>
-        <aside class="notes">
-          This Python code is used in our backend to automate growth reporting.
-        </aside>
-      </section>
-
-      <section>
-        <h2>Thank You</h2>
-        <p>For detailed inquiries, please contact:</p>
-        <h3 style="color: #42affa;">23f3004196@ds.study.iitm.ac.in</h3>
-        <aside class="notes">
-          End of presentation. Open floor for Q&A.
-        </aside>
       </section>
 
     </div>
@@ -110,14 +90,19 @@ print(f"CAGR: {calculate_cagr(100, 150, 3):.2%}")
   <script src="https://unpkg.com/reveal.js@4.5.0/dist/plugin/math/math.js"></script>
 
   <script>
-    // Initialize Reveal with standard plugins
     Reveal.initialize({
-      controls: true,
-      progress: true,
-      center: true,
       hash: true,
-      // Load plugins: Markdown, Highlight, Notes, and Math (MathJax)
-      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath ]
+      center: true,
+      // Essential for animations to work nicely
+      fragments: true, 
+      // Load the plugins
+      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX ]
+    }).then(() => {
+        console.log("Reveal Initialized - If you see this, JS is working.");
+    }).catch(err => {
+        // Fallback if KaTeX fails, try standard math
+        console.log("KaTeX failed, retrying with standard MathJax...");
+        Reveal.initialize({ plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath ] });
     });
   </script>
 </body>
