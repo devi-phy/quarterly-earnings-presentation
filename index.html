@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quarterly Earnings — Interactive Reveal.js</title>
+
+  <!-- Reveal.js from CDN (pin a known stable version) -->
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.5.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.5.0/dist/theme/black.css" id="theme">
+
+  <!-- Highlight.js for code highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+
+  <style>
+    /* small style tweak for footer/email */
+    .footer-email { position: absolute; right: 1rem; bottom: 0.5rem; font-size: 0.85rem; opacity: 0.85 }
+  </style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Title slide (HTML) -->
+      <section>
+        <h1>Quarterly Earnings — Q4</h1>
+        <p>Modern interactive report for stakeholders</p>
+        <p class="footer-email">Contact: 23f3004196@ds.study.iitm.ac.in</p>
+        <aside class="notes">
+          Introduce the agenda briefly. Mention that interactive Q&A will follow.
+        </aside>
+      </section>
+
+      <!-- Markdown slide: supports markdown plugin -->
+      <section data-markdown>
+        <textarea data-template>
+
+## Agenda (Markdown slide)
+
+- Highlights
+- Revenue & Expenses
+- Key ratios
+- Outlook & Q&A
+
+> This slide is authored in **Markdown** and rendered by Reveal's Markdown plugin.
+
+        </textarea>
+        <aside class="notes">
+          Walk through the high level agenda. Keep it crisp.
+        </aside>
+      </section>
+
+      <!-- Slide with fragments (animated elements) -->
+      <section>
+        <h2>Highlights</h2>
+        <ul>
+          <li class="fragment">Revenue up 12% quarter-over-quarter</li>
+          <li class="fragment">Net margin improved by 1.4 percentage points</li>
+          <li class="fragment">Operating expense reduction initiatives on track</li>
+        </ul>
+        <aside class="notes">
+          Use fragments to reveal one bullet at a time while narrating.
+        </aside>
+      </section>
+
+      <!-- Slide with code sample and syntax highlighting -->
+      <section>
+        <h2>Example — Calculating CAGR (Python)</h2>
+        <pre><code class="language-python">def cagr(begin_value, end_value, periods):
+    return (end_value / begin_value) ** (1.0 / periods) - 1
+
+# example
+print(cagr(100, 150, 3))  # ~0.1447 -> 14.47%</code></pre>
+        <aside class="notes">
+          Explain why CAGR is useful for smoothing growth across periods.
+        </aside>
+      </section>
+
+      <!-- Slide with mathematical equation (MathJax) -->
+      <section>
+        <h2>Key Financial Formula</h2>
+        <p>Net Present Value (NPV):</p>
+        <p>$$\mathrm{NPV} = \sum_{t=0}^{T} \frac{C_t}{(1+r)^t}$$</p>
+        <p>Where $C_t$ = cashflow at time $t$, $r$ = discount rate.</p>
+        <aside class="notes">
+          Walk through each term and mention interpretation for our valuation model.
+        </aside>
+      </section>
+
+      <!-- Slide using fragments inside a chart placeholder (simple) -->
+      <section>
+        <h2>Revenue Breakdown</h2>
+        <p>Hover/click through fragments to reveal categories:</p>
+        <ol>
+          <li class="fragment">Product A — 48%</li>
+          <li class="fragment">Product B — 32%</li>
+          <li class="fragment">Services — 20%</li>
+        </ol>
+        <aside class="notes">
+          If available, replace this with an embedded chart. For now, reveal each segment while discussing drivers.
+        </aside>
+      </section>
+
+      <!-- Closing slide with next steps and speaker notes -->
+      <section>
+        <h2>Next Steps & Questions</h2>
+        <p class="fragment">Finalize forecast assumptions (by: 2 weeks)</p>
+        <p class="fragment">Share detailed model with Finance</p>
+        <p class="fragment">Schedule deep-dive sessions with product teams</p>
+        <aside class="notes">
+          Ask for stakeholder feedback; propose follow-up cadence.
+        </aside>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Reveal.js core -->
+  <script src="https://unpkg.com/reveal.js@4.5.0/dist/reveal.js"></script>
+
+  <!-- Plugins (make sure these match the Reveal version) -->
+  <script src="https://unpkg.com/reveal.js@4.5.0/dist/plugin/markdown/markdown.js"></script>
+  <script src="https://unpkg.com/reveal.js@4.5.0/dist/plugin/highlight/highlight.js"></script>
+  <script src="https://unpkg.com/reveal.js@4.5.0/dist/plugin/math/math.js"></script>
+  <script src="https://unpkg.com/reveal.js@4.5.0/dist/plugin/notes/notes.js"></script>
+
+  <!-- Highlight.js (optional fallback) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+  <script>
+    // Build plugin list defensively using window.* to avoid ReferenceError
+    const plugins = [];
+
+    if (window.RevealMarkdown) plugins.push(window.RevealMarkdown);
+    else console.warn('Reveal Markdown plugin not found: markdown slides will not render.');
+
+    if (window.RevealHighlight) plugins.push(window.RevealHighlight);
+    else console.warn('Reveal Highlight plugin not found: code highlighting plugin unavailable.');
+
+    if (window.RevealMath) plugins.push(window.RevealMath);
+    else console.warn('Reveal Math plugin not found: MathJax equations may not render.');
+
+    if (window.RevealNotes) plugins.push(window.RevealNotes);
+    else console.warn('Reveal Notes plugin not found: speaker notes unavailable.');
+
+    // Initialize Reveal with the defensive plugin list
+    Reveal.initialize({
+      hash: true,
+      plugins: plugins,
+      center: true,
+      slideNumber: true,
+      math: {
+        // MathJax URL for the math plugin
+        mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+      }
+    });
+
+    // Ensure code highlighting runs if Highlight.js is present
+    if (window.hljs && typeof hljs.highlightAll === 'function') hljs.highlightAll();
+  </script>
+</body>
+</html>
