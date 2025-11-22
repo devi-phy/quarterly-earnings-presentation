@@ -15,7 +15,6 @@
   <style>
     .footer-email { position: absolute; right: 1rem; bottom: 0.5rem; font-size: 0.85rem; opacity: 0.95 }
     .big-email { font-size:1.6rem; font-weight:700; text-align:center; }
-    pre.code-fragment code { display:block; }
   </style>
 </head>
 
@@ -23,13 +22,13 @@
   <div class="reveal">
     <div class="slides">
 
-      <!-- Title -->
+      <!-- Title slide -->
       <section>
         <h1>Quarterly Earnings — Q4</h1>
         <p>Interactive Report for Stakeholders</p>
-        <p class="footer-email">Contact: 23f3004196@ds.study.iitm.ac.in</p>
+        <p class="footer-email">Contact: <strong>23f3004196@ds.study.iitm.ac.in</strong></p>
         <aside class="notes">
-          Introduce the quarter highlights, objectives, and agenda.
+          Introduce the purpose of the quarterly report.
         </aside>
       </section>
 
@@ -38,46 +37,42 @@
         <textarea data-template>
 # Agenda
 
-- Revenue Highlights
-- Cost Structure
-- Financial Ratios (NPV, IRR, CAGR)
-- Forecast
-- Q&A
+- Revenue Highlights  
+- Cost Structure  
+- Key Ratios (NPV, IRR, CAGR)  
+- Forecast  
+- Q&A  
 
-> This slide is written using **Markdown**.
+> Slide written fully in **Markdown**.
         </textarea>
       </section>
 
-      <!-- Animated fragments -->
+      <!-- Fragments -->
       <section>
         <h2>Key Highlights</h2>
         <ul>
-          <li class="fragment">Revenue up <strong>12%</strong> QoQ</li>
-          <li class="fragment">Net margin improved by <strong>1.4%</strong></li>
-          <li class="fragment">Operational expenses reduced</li>
-          <li class="fragment">Customer acquisition cost down <strong>8%</strong></li>
+          <li class="fragment">Revenue up **12%** QoQ</li>
+          <li class="fragment">Net margin improved **1.4%**</li>
+          <li class="fragment">Operational cost efficiency improved</li>
+          <li class="fragment">Customer acquisition cost reduced by **8%**</li>
         </ul>
       </section>
 
-      <!-- Code example -->
+      <!-- Code Highlighting -->
       <section>
         <h2>CAGR Calculation (Python)</h2>
-        <pre class="code-fragment"><code class="language-python">
+        <pre><code class="language-python">
 <span class="fragment">def cagr(begin, end, years):</span>
 <span class="fragment">    """Compound Annual Growth Rate"""</span>
 <span class="fragment">    return (end / begin) ** (1 / years) - 1</span>
 
 <span class="fragment">print(cagr(100, 150, 3))</span>
         </code></pre>
-
-        <aside class="notes">
-          Explain CAGR line-by-line using fragments.
-        </aside>
       </section>
 
-      <!-- LaTeX slide -->
+      <!-- Math (LaTeX) -->
       <section>
-        <h2>Financial Math — LaTeX Rendered</h2>
+        <h2>Financial Math — LaTeX</h2>
 
         <p><strong>Summation</strong></p>
         <p>$$ \sum_{i=1}^{n} x_i $$</p>
@@ -88,53 +83,45 @@
         <p><strong>Expected Return</strong></p>
         <p>$$ E(R) = \sum_{i=1}^n p_i r_i $$</p>
 
-        <p><strong>Net Present Value (NPV)</strong></p>
+        <p><strong>NPV</strong></p>
         <p>$$ \mathrm{NPV} = \sum_{t=0}^T \frac{C_t}{(1+r)^t} $$</p>
-
-        <aside class="notes">
-          This slide uses pure LaTeX rendered by MathJax.
-        </aside>
       </section>
 
-      <!-- Forecast (fragments) -->
+      <!-- Forecast -->
       <section>
         <h2 class="fragment">Forecast Model</h2>
-        <p class="fragment">Starting revenue: \( R_0 \)</p>
-        <p class="fragment">Growth rate: \( g \)</p>
-        <p class="fragment">
+        <p class="fragment">Start: \(R_0\)</p>
+        <p class="fragment">Growth Rate: \(g\)</p>
+        <p class="fragment">Projected:  
           $$ R_n = R_0 (1+g)^n $$
         </p>
       </section>
 
-      <!-- Contact -->
+      <!-- Contact Slide (Email Visible) -->
       <section>
         <h1>Contact</h1>
-        <p class="big-email">23f3004196@ds.study.iitm.ac.in</p>
+        <p class="big-email"><strong>23f3004196@ds.study.iitm.ac.in</strong></p>
       </section>
 
     </div>
   </div>
 
-  <!-- Reveal.js core -->
+  <!-- Reveal.js Scripts -->
   <script src="https://unpkg.com/reveal.js@4.5.0/dist/reveal.js"></script>
-
-  <!-- Plugins -->
   <script src="https://unpkg.com/reveal.js@4.5.0/dist/plugin/markdown/markdown.js"></script>
   <script src="https://unpkg.com/reveal.js@4.5.0/dist/plugin/highlight/highlight.js"></script>
   <script src="https://unpkg.com/reveal.js@4.5.0/dist/plugin/math/math.js"></script>
 
-  <!-- MathJax -->
   <script>
     Reveal.initialize({
-      hash: true,
-      slideNumber: true,
       plugins: [ RevealMarkdown, RevealHighlight, RevealMath ],
       math: {
         mathjax: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
-      }
+      },
+      hash: true,
+      slideNumber: true
     });
   </script>
 
 </body>
 </html>
-
