@@ -3,104 +3,138 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quarterly Earnings Report</title>
+  <title>Quarterly Earnings — Interactive Reveal.js</title>
 
+  <!-- Reveal.js -->
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.5.0/dist/reveal.css">
   <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.5.0/dist/theme/black.css" id="theme">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/monokai.min.css">
+
+  <!-- Highlight.js -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+
+  <style>
+    .footer-email { position: absolute; right: 1rem; bottom: 0.5rem; font-size: 0.85rem; opacity: 0.95 }
+    .big-email { font-size:1.6rem; font-weight:700; text-align:center; }
+    pre.code-fragment code { display:block; }
+  </style>
 </head>
 
 <body>
   <div class="reveal">
     <div class="slides">
 
+      <!-- Title -->
       <section>
-        <h1>Q4 Earnings Report</h1>
-        <h3>Interactive Presentation</h3>
-        <p>Presented by: Technical Consultant</p>
-        <p style="color: #42affa; font-size: 0.9em;">23f3004196@ds.study.iitm.ac.in</p>
+        <h1>Quarterly Earnings — Q4</h1>
+        <p>Interactive Report for Stakeholders</p>
+        <p class="footer-email">Contact: 23f3004196@ds.study.iitm.ac.in</p>
+        <aside class="notes">
+          Introduce the quarter highlights, objectives, and agenda.
+        </aside>
       </section>
 
+      <!-- Markdown slide -->
       <section data-markdown>
         <textarea data-template>
-          ## Agenda (Markdown)
-          
-          * Financial Highlights
-          * Operational Efficiency
-          * **Contact:** 23f3004196@ds.study.iitm.ac.in
-          
-          ---
-          > "Data-driven decisions."
+# Agenda
+
+- Revenue Highlights
+- Cost Structure
+- Financial Ratios (NPV, IRR, CAGR)
+- Forecast
+- Q&A
+
+> This slide is written using **Markdown**.
         </textarea>
       </section>
 
+      <!-- Animated fragments -->
       <section>
-        <h2>Growth Metrics</h2>
-        <p>Press <strong>Next</strong> to reveal:</p>
+        <h2>Key Highlights</h2>
         <ul>
-          <li class="fragment fade-up">Revenue up 15%</li>
-          <li class="fragment fade-up">2M Active Users</li>
-          <li class="fragment fade-up">Churn reduced by 5%</li>
+          <li class="fragment">Revenue up <strong>12%</strong> QoQ</li>
+          <li class="fragment">Net margin improved by <strong>1.4%</strong></li>
+          <li class="fragment">Operational expenses reduced</li>
+          <li class="fragment">Customer acquisition cost down <strong>8%</strong></li>
         </ul>
       </section>
 
+      <!-- Code example -->
       <section>
-        <h2>Valuation Model</h2>
-        <p>Net Present Value (NPV):</p>
-        <div style="font-size: 1.5em; margin: 20px 0;">
-          \[ NPV = \sum_{t=1}^{T} \frac{C_t}{(1+r)^t} - C_0 \]
-        </div>
-        <p style="font-size: 0.7em;">Where \(r\) is the discount rate.</p>
+        <h2>CAGR Calculation (Python)</h2>
+        <pre class="code-fragment"><code class="language-python">
+<span class="fragment">def cagr(begin, end, years):</span>
+<span class="fragment">    """Compound Annual Growth Rate"""</span>
+<span class="fragment">    return (end / begin) ** (1 / years) - 1</span>
+
+<span class="fragment">print(cagr(100, 150, 3))</span>
+        </code></pre>
+
+        <aside class="notes">
+          Explain CAGR line-by-line using fragments.
+        </aside>
       </section>
 
+      <!-- LaTeX slide -->
       <section>
-        <h2>Automated Analysis</h2>
-        <pre><code class="language-python" data-trim data-noescape>
-def calculate_growth(current, previous):
-    """
-    Calculate Growth Rate
-    """
-    if previous == 0: return 0
-    return (current - previous) / previous
+        <h2>Financial Math — LaTeX Rendered</h2>
 
-# Result
-print(f"Growth: {calculate_growth(150, 100):.2%}")
-        </code></pre>
+        <p><strong>Summation</strong></p>
+        <p>$$ \sum_{i=1}^{n} x_i $$</p>
+
+        <p><strong>Standard Deviation</strong></p>
+        <p>$$ \sigma = \sqrt{ \frac{1}{n} \sum_{i=1}^n (x_i - \mu)^2 } $$</p>
+
+        <p><strong>Expected Return</strong></p>
+        <p>$$ E(R) = \sum_{i=1}^n p_i r_i $$</p>
+
+        <p><strong>Net Present Value (NPV)</strong></p>
+        <p>$$ \mathrm{NPV} = \sum_{t=0}^T \frac{C_t}{(1+r)^t} $$</p>
+
+        <aside class="notes">
+          This slide uses pure LaTeX rendered by MathJax.
+        </aside>
+      </section>
+
+      <!-- Forecast (fragments) -->
+      <section>
+        <h2 class="fragment">Forecast Model</h2>
+        <p class="fragment">Starting revenue: \( R_0 \)</p>
+        <p class="fragment">Growth rate: \( g \)</p>
+        <p class="fragment">
+          $$ R_n = R_0 (1+g)^n $$
+        </p>
+      </section>
+
+      <!-- Contact -->
+      <section>
+        <h1>Contact</h1>
+        <p class="big-email">23f3004196@ds.study.iitm.ac.in</p>
       </section>
 
     </div>
   </div>
 
+  <!-- Reveal.js core -->
   <script src="https://unpkg.com/reveal.js@4.5.0/dist/reveal.js"></script>
+
+  <!-- Plugins -->
   <script src="https://unpkg.com/reveal.js@4.5.0/dist/plugin/markdown/markdown.js"></script>
   <script src="https://unpkg.com/reveal.js@4.5.0/dist/plugin/highlight/highlight.js"></script>
-  <script src="https://unpkg.com/reveal.js@4.5.0/dist/plugin/notes/notes.js"></script>
   <script src="https://unpkg.com/reveal.js@4.5.0/dist/plugin/math/math.js"></script>
 
+  <!-- MathJax -->
   <script>
-    // We wrap this in window.onload to prevent the "ReferenceError"
-    // This ensures the scripts above are fully loaded before we use them.
-    window.onload = function() {
-      
-      // Defensively build the plugins list
-      const plugins = [];
-      
-      // Only add the plugin if the browser successfully loaded it
-      if(window.RevealMarkdown) plugins.push(RevealMarkdown);
-      if(window.RevealHighlight) plugins.push(RevealHighlight);
-      if(window.RevealNotes) plugins.push(RevealNotes);
-      if(window.RevealMath) plugins.push(RevealMath.KaTeX);
-
-      Reveal.initialize({
-        hash: true,
-        center: true,
-        plugins: plugins
-      }).then(() => {
-        console.log("Presentation loaded successfully!");
-      }).catch(err => {
-        console.error("Presentation failed to load:", err);
-      });
-    };
+    Reveal.initialize({
+      hash: true,
+      slideNumber: true,
+      plugins: [ RevealMarkdown, RevealHighlight, RevealMath ],
+      math: {
+        mathjax: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+      }
+    });
   </script>
+
 </body>
 </html>
+
