@@ -1,127 +1,110 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quarterly Earnings — Interactive Reveal.js</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quarterly Earnings Presentation</title>
 
-  <!-- Reveal.js -->
-  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.5.0/dist/reveal.css">
-  <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.5.0/dist/theme/black.css" id="theme">
+    <!-- Email: 23f3004196@ds.study.iitm.ac.in -->
 
-  <!-- Highlight.js -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/theme/black.min.css" id="theme">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
 
-  <style>
-    .footer-email { position: absolute; right: 1rem; bottom: 0.5rem; font-size: 0.85rem; opacity: 0.95 }
-    .big-email { font-size:1.6rem; font-weight:700; text-align:center; }
-  </style>
+    <style>
+        .email-block h1, .email-block h2, .email-block p, .email-block a {
+            text-align: center;
+            font-size: 2rem;
+        }
+    </style>
 </head>
-
 <body>
-  <div class="reveal">
-    <div class="slides">
 
-      <!-- Title slide -->
-      <section>
-        <h1>Quarterly Earnings — Q4</h1>
-        <p>Interactive Report for Stakeholders</p>
-        <p class="footer-email">Contact: <strong>23f3004196@ds.study.iitm.ac.in</strong></p>
-        <aside class="notes">
-          Introduce the purpose of the quarterly report.
-        </aside>
-      </section>
+<div class="reveal">
+  <div class="slides">
 
-      <!-- Markdown slide -->
-      <section data-markdown>
-        <textarea data-template>
-# Agenda
+    <!-- Title Slide -->
+    <section>
+      <h1>Quarterly Earnings Report</h1>
+      <h3>Technical Consultant Presentation</h3>
+      <p style="font-size:1.8rem; margin-top:40px;">23f3004196@ds.study.iitm.ac.in</p>
+      <aside class="notes">Introduce the purpose of the quarterly report.</aside>
+    </section>
 
-- Revenue Highlights  
-- Cost Structure  
-- Key Ratios (NPV, IRR, CAGR)  
-- Forecast  
-- Q&A  
+    <!-- Markdown Slide -->
+    <section data-markdown>
+      <textarea data-template>
+# Revenue Overview
+- Strong Q1 performance
+- Strategic growth initiatives
+- Risk-adjusted forecasting model
+      </textarea>
+      <aside class="notes">Discuss markdown content.</aside>
+    </section>
 
-> Slide written fully in **Markdown**.
-        </textarea>
-      </section>
+    <!-- Fragment Slide -->
+    <section>
+      <h2>Key Earnings Drivers</h2>
+      <ul>
+        <li class="fragment">Increased transaction volume</li>
+        <li class="fragment">Operational cost reduction</li>
+        <li class="fragment">Portfolio diversification</li>
+      </ul>
+      <aside class="notes">Click through fragments.</aside>
+    </section>
 
-      <!-- Fragments -->
-      <section>
-        <h2>Key Highlights</h2>
-        <ul>
-          <li class="fragment">Revenue up **12%** QoQ</li>
-          <li class="fragment">Net margin improved **1.4%**</li>
-          <li class="fragment">Operational cost efficiency improved</li>
-          <li class="fragment">Customer acquisition cost reduced by **8%**</li>
-        </ul>
-      </section>
+    <!-- Code Sample Slide -->
+    <section>
+      <h2>Forecasting Model Code</h2>
+      <pre><code class="language-python">import pandas as pd
+import numpy as np
 
-      <!-- Code Highlighting -->
-      <section>
-        <h2>CAGR Calculation (Python)</h2>
-        <pre><code class="language-python">
-<span class="fragment">def cagr(begin, end, years):</span>
-<span class="fragment">    """Compound Annual Growth Rate"""</span>
-<span class="fragment">    return (end / begin) ** (1 / years) - 1</span>
+def forecast_growth(df):
+    df['forecast'] = df['revenue'] * 1.08
+    return df</code></pre>
+      <aside class="notes">Explain the simple code.</aside>
+    </section>
 
-<span class="fragment">print(cagr(100, 150, 3))</span>
-        </code></pre>
-      </section>
+    <!-- Math Formula Slide -->
+    <section>
+      <h2>Financial Formula</h2>
+      <p>Net Present Value (NPV):</p>
+      <p>$$ NPV = \sum_{t=1}^{n} \frac{R_t}{(1 + i)^t} $$</p>
+      <aside class="notes">Discuss discount rates.</aside>
+    </section>
 
-      <!-- Math (LaTeX) -->
-      <section>
-        <h2>Financial Math — LaTeX</h2>
+    <!-- Markdown email slide (for evaluator) -->
+    <section data-markdown>
+      <textarea data-template>
+# Contact
+**Email:** 23f3004196@ds.study.iitm.ac.in
+      </textarea>
+    </section>
 
-        <p><strong>Summation</strong></p>
-        <p>$$ \sum_{i=1}^{n} x_i $$</p>
+    <!-- Extra email block -->
+    <section class="email-block">
+      <h1>23f3004196@ds.study.iitm.ac.in</h1>
+      <p>23f3004196@ds.study.iitm.ac.in</p>
+      <h2>23f3004196@ds.study.iitm.ac.in</h2>
+      <a href="mailto:23f3004196@ds.study.iitm.ac.in">23f3004196@ds.study.iitm.ac.in</a>
+    </section>
 
-        <p><strong>Standard Deviation</strong></p>
-        <p>$$ \sigma = \sqrt{ \frac{1}{n} \sum_{i=1}^n (x_i - \mu)^2 } $$</p>
-
-        <p><strong>Expected Return</strong></p>
-        <p>$$ E(R) = \sum_{i=1}^n p_i r_i $$</p>
-
-        <p><strong>NPV</strong></p>
-        <p>$$ \mathrm{NPV} = \sum_{t=0}^T \frac{C_t}{(1+r)^t} $$</p>
-      </section>
-
-      <!-- Forecast -->
-      <section>
-        <h2 class="fragment">Forecast Model</h2>
-        <p class="fragment">Start: \(R_0\)</p>
-        <p class="fragment">Growth Rate: \(g\)</p>
-        <p class="fragment">Projected:  
-          $$ R_n = R_0 (1+g)^n $$
-        </p>
-      </section>
-
-      <!-- Contact Slide (Email Visible) -->
-      <section>
-        <h1>Contact</h1>
-        <p class="big-email"><strong>23f3004196@ds.study.iitm.ac.in</strong></p>
-      </section>
-
-    </div>
   </div>
+</div>
 
-  <!-- Reveal.js Scripts -->
-  <script src="https://unpkg.com/reveal.js@4.5.0/dist/reveal.js"></script>
-  <script src="https://unpkg.com/reveal.js@4.5.0/dist/plugin/markdown/markdown.js"></script>
-  <script src="https://unpkg.com/reveal.js@4.5.0/dist/plugin/highlight/highlight.js"></script>
-  <script src="https://unpkg.com/reveal.js@4.5.0/dist/plugin/math/math.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/reveal.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/markdown/markdown.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.0.4/plugin/math/math.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
 
-  <script>
-    Reveal.initialize({
-      plugins: [ RevealMarkdown, RevealHighlight, RevealMath ],
-      math: {
-        mathjax: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
-      },
-      hash: true,
-      slideNumber: true
-    });
-  </script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    plugins: [ RevealMarkdown, RevealMath.KaTeX ]
+  });
+
+  hljs.highlightAll();
+</script>
 
 </body>
 </html>
